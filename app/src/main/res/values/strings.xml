@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">WeatherApp</string>
     <string name="copyright">©Hemendra Sethi 2015</string>
+    <string name="text_temperature">Temperature</string>
+    <string name="text_condition">Condition</string>
+    <string name="text_location">Location</string>
+    <string name="yahoo_logo">Yahoo Logo</string>
 </resources>
