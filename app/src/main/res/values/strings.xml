@@ -5,4 +5,9 @@
     <string name="text_condition">Condition</string>
     <string name="text_location">Location</string>
     <string name="yahoo_logo">Yahoo Logo</string>
+    <string name="l_day">Day</string>
+    <string name="l_temp">Temperature</string>
+    <string name="l_desc">Description</string>
+    <string name="l_highTemp">High</string>
+    <string name="l_lowTemp">Low</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.esspl.hemendra.weatherapp.model;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**

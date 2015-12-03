@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,7 +16,7 @@
         android:id="@+id/search_city"
         android:divider="#3e3434"
         android:queryHint="Search City"
-        app:defaultQueryHint="Search City">
+        >
 
     </SearchView>
 
@@ -70,4 +71,14 @@
         android:id="@+id/textView"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/yahoo_logo" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/forecast_list"
+            android:layout_below="@+id/locationTextView"
+            android:layout_above="@+id/yahoo_logo">
+
+        </ListView>
+
 </RelativeLayout>

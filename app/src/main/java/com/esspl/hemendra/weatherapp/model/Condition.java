@@ -1,5 +1,6 @@
 package com.esspl.hemendra.weatherapp.model;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -40,4 +41,5 @@ public class Condition implements JSONPopulator {
         tempaerature = data.optInt("temp");
         description = data.optString("text");
     }
+
 }

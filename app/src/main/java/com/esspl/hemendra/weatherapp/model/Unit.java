@@ -1,5 +1,6 @@
 package com.esspl.hemendra.weatherapp.model;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -16,6 +17,7 @@ public class Unit implements JSONPopulator {
     public void setTempUnit(String tempUnit) {
         this.tempUnit = tempUnit;
     }
+
 
     @Override
     public void populate(JSONObject data) {

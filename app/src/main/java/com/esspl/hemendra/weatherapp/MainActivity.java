@@ -13,15 +13,21 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.esspl.hemendra.weatherapp.model.Channel;
+import com.esspl.hemendra.weatherapp.model.ForecastData;
 import com.esspl.hemendra.weatherapp.model.Item;
 import com.esspl.hemendra.weatherapp.service.DetectNetworkConnectivity;
 import com.esspl.hemendra.weatherapp.service.WeatherServiceCallback;
 import com.esspl.hemendra.weatherapp.service.YAHOOWeatherService;
+import com.esspl.hemendra.weatherapp.utility.ForecastListAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements WeatherServiceCallback {
 
@@ -33,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements WeatherServiceCal
     private String searchCity;
 
     private SearchView searchView;
+
+    private ListView forecast_list;
+    private ForecastListAdapter forecastListAdapter;
 
     private YAHOOWeatherService service;
     private ProgressDialog dialog;
@@ -46,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements WeatherServiceCal
         temperatureTextView = (TextView) findViewById(R.id.temperatureTextView);
         conditionTextView = (TextView) findViewById(R.id.conditionTextView);
         locationTextView = (TextView) findViewById(R.id.locationTextView);
+        forecast_list = (ListView) findViewById(R.id.forecast_list);
 
         service = new YAHOOWeatherService(this);
         searchWeather("Bhubaneswar,India");
@@ -106,6 +116,16 @@ public class MainActivity extends AppCompatActivity implements WeatherServiceCal
         temperatureTextView.setText(item.getCondition().getTempaerature() + "\u00B0" + channel.getUnit().getTempUnit());
         conditionTextView.setText(item.getCondition().getDescription());
         locationTextView.setText(service.getLocation().toString());
+
+        List<ForecastData> forecastDatas = item.getForeCasts().getForeCasts();
+
+        Log.d("MainActivity:", "==========SIZE========="+forecastDatas.size());
+
+        forecastListAdapter = new ForecastListAdapter(this, forecastDatas);
+        forecast_list.setAdapter(forecastListAdapter);
+        Log.d("List Id==============", "Called List");
+
+
 
 
 
