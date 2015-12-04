@@ -32,6 +32,7 @@ public class ForeCast implements JSONPopulator {
         forecastData.setDay(data.optString("day"));
         forecastData.setHigh(data.optInt("high"));
         forecastData.setLow(data.optInt("low"));
+        forecastData.setDescription(data.optString("text"));
 
         foreCasts.add(forecastData);
 

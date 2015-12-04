@@ -2,11 +2,13 @@ package com.esspl.hemendra.weatherapp.utility;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.esspl.hemendra.weatherapp.R;
@@ -64,6 +66,7 @@ public class ForecastListAdapter extends BaseAdapter {
             viewHolder.v_description = (TextView) view.findViewById(R.id.v_description);
             viewHolder.v_highTemp = (TextView) view.findViewById(R.id.v_highTemp);
             viewHolder.v_lowTemp = (TextView) view.findViewById(R.id.v_lowTemp);
+            viewHolder.icon_image = (ImageView) view.findViewById(R.id.icon_image);
 
             view.setTag(viewHolder);
         }else
@@ -76,6 +79,11 @@ public class ForecastListAdapter extends BaseAdapter {
             viewHolder.v_description.setText(forecastData.getDescription()!=null?forecastData.getDescription().toString():"");
             viewHolder.v_highTemp.setText(String.valueOf(forecastData.getHigh())+"\u00B0");
             viewHolder.v_lowTemp.setText(String.valueOf(forecastData.getLow()+"\u00B0"));
+
+            int resourceId = context.getResources().getIdentifier("drawable/icon_"+String.valueOf(forecastData.getCode()).trim(),null, context.getPackageName());
+            Drawable drawable = context.getDrawable(resourceId);
+
+            viewHolder.icon_image.setImageDrawable(drawable);
         }
 
         return view;
@@ -87,5 +95,6 @@ public class ForecastListAdapter extends BaseAdapter {
         public TextView v_description;
         public TextView v_highTemp;
         public TextView v_lowTemp;
+        public ImageView icon_image;
     }
 }
