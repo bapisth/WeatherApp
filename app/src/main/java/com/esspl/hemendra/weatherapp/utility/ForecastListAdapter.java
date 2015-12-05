@@ -58,7 +58,7 @@ public class ForecastListAdapter extends BaseAdapter {
         ViewHolder viewHolder;
 
         if (convertView == null){
-            view = inflater.inflate(R.layout.forecast_layout, null);
+            view = inflater.inflate(R.layout.forecart_layout_test, null);
 
             viewHolder = new ViewHolder();
             viewHolder.tv_day = (TextView) view.findViewById(R.id.tv_day);
